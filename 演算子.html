@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>演算子練習</title>
+  </head>
+  <body>
+    <h1>演算子</h1>
+    <script>
+      // 分割代入
+      const array = [1, 2];
+      const [a, b] = array;
+      console.log(a);
+      console.log(b);
+
+      const obj = {
+        key: "value",
+      };
+      // プロパティ名`key`の値を、変数`key`として定義する
+      const { key } = obj;
+      console.log(key);
+
+      // 論理演算子
+
+      console.log(true && "右辺式");
+      console.log(false && "右辺式");
+      // 左辺がtrueなので、右辺は評価される
+      true && console.log("このコンソールログは実行されます");
+      // 左辺がfalseなので、右辺は評価されない
+      false && console.log("このコンソールログは実行されません");
+
+      console.log(true || "右辺式");
+      console.log(false || "右辺式");
+      // 左辺がtrueなので、右辺は評価されない
+      true || console.log("このコンソールログは実行されません");
+      // 左辺がfalseなので、右辺は評価される
+      false || console.log("このコンソールログは実行されます");
+
+      const value = 0; // 1でも同様の結果になるよ
+      if (value === 0 || value === 1) {
+        console.log("valueは0または1です。");
+      }
+
+      // 条件演算子、三項演算子
+      const valueA = true ? "A" : "B";
+      console.log(valueA);
+      const valueB = false ? "A" : "B";
+      console.log(valueB);
+
+      addPrefix = (text, prefix) => {
+        const pre = typeof prefix === "string" ? prefix : "デフォルト:";
+        return pre + text;
+      };
+      console.log(addPrefix("文字列"));
+      console.log(addPrefix("文字列", "カスタム"));
+
+      //   function addPrefix(text, prefix) {
+      //     let pre = "デフォルト:";
+      //     if (typeof prefix === "string") {
+      //       pre = prefix;
+      //     }
+      //     return pre + text;
+      //   }
+
+      //   console.log(addPrefix("文字列")); // => "デフォルト:文字列"
+      //   console.log(addPrefix("文字列", "カスタム:")); // => "カスタム:文字列"
+    </script>
+  </body>
+</html>
